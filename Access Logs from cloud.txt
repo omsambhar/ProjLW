@@ -1,0 +1,9 @@
+Enable CloudWatch Logs:
+
+Download and install the CloudWatch agent:
+
+sudo yum install amazon-cloudwatch-agent -y
+
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+
+sudo systemctl start amazon-cloudwatch-agent

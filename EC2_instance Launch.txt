@@ -1,0 +1,14 @@
+import boto3
+
+def launch_ec2_instance():
+    ec2 = boto3.resource('ec2')
+    instance = ec2.create_instances(
+        ImageId='ami-0c55b159cbfafe1f0',  # Replace with the desired AMI ID
+        MinCount=1,
+        MaxCount=1,
+        InstanceType='t2.micro',  # Replace with desired instance type
+        KeyName='your-key-pair'  # Replace with your key pair name
+    )
+    print(f'Launched EC2 instance with ID: {instance[0].id}')
+
+launch_ec2_instance()
